@@ -81,3 +81,8 @@ chmod +x ./runner.sh
 ```
 ./runner.sh targets.json 300
 ```
+
+Alternative run command for dockerized version
+```bash
+docker run -ti --rm -v $(pwd)/targets.json:/app/targets.json k6clean:latest  targets.json 300
+```

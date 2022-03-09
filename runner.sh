@@ -5,6 +5,7 @@ maxThreads=100
 hosts=$(cat $1 | jq "[ . | to_entries[] | select(.value) | .value ] | unique " | jq -c ".[]")
 hostsCount=$(echo $hosts | jq -cRs 'split(" " )' | jq length )
 threadsCount=$(( maxThreads / hostsCount ))
+i
 runner=""
 
 for host in ${hosts[@]}; do
